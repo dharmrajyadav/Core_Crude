@@ -1,0 +1,148 @@
+
+
+<html>
+
+<head>
+	<title>User Page</title>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+
+ function DeleteInterest(id) {
+   var rowId=id;
+          $.ajax({
+                      type:"post",
+                      url:"deleteRowData.php",
+                      data:{id:rowId},
+                      success:function(data)
+                      {
+
+                        alert('There are no fields to generate a report');
+                        document.location='user.html';
+
+                      
+                       
+                      }
+
+                 });
+ }
+
+
+
+
+  </script>
+
+  <style>
+
+  .container {
+  padding: 2rem 0rem;
+}
+
+h4 {
+  margin: 2rem 0rem 1rem;
+}
+
+
+  </style>
+</head>
+<body>
+	<form>
+		
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered" id="userDetails">
+        <thead>
+          <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Country</th>
+            <th scope="col">state</th>
+            <th scope="col">District</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Password</th>
+            <th scope="col">Email ID</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          
+          <!-- <tr name="userDetails" id="userDetails">
+            
+            <td>
+              <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
+              <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+            </td>
+          </tr> -->
+          
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+	</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+ <script type="text/javascript">
+
+ $('document').ready(function()
+ {
+
+ 	$.ajax({
+ 		url: "fetchregistration.php",
+ 		success: function(data){
+ 			valData = JSON.parse(data);
+ 			var length = valData.fetchdata.length;
+ 			var appendRows ='';
+ 			for (var i = 0; i<length; i++) {
+
+ 				//htr+='<option value="'+valData.fetchdata[i].dept_name+'">'+valData.fetchdata[i].dept_name+'</option>';
+ 				
+ 			appendRows+='<tr><td>'+valData.fetchdata[i].id+'</td><td>'+valData.fetchdata[i].firstname+'</td><td>'+valData.fetchdata[i].lastname+'</td><td>'+valData.fetchdata[i].department+'</td><td>'+valData.fetchdata[i].country+'</td><td>'+valData.fetchdata[i].state+'</td><td>'+valData.fetchdata[i].district+'</td><td>'+valData.fetchdata[i].user_name+'</td><td>'+valData.fetchdata[i].password+'</td><td>'+valData.fetchdata[i].email+'</td><td>'+valData.fetchdata[i].contact+'</td><td><button type="button" class="btn btn-primary InterestID" style="font-size: large;" onclick="DeleteInterest('+valData.fetchdata[i].id+')">Delete</button><button type="button" class="btn btn-danger InterestID" style="font-size: large;" onclick="DeleteInterest('+valData.fetchdata[i].id+')">Update</button></td></tr>';
+ 			};
+ 			$("#userDetails tbody").html(appendRows);
+
+
+
+
+ 		}});
+
+
+
+
+  
+              
+
+
+
+        
+
+ 	});
+
+
+
+
+
+ </script>
+
+</body>
+</html>

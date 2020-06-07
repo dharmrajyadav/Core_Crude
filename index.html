@@ -1,0 +1,316 @@
+<html>
+<head>
+	<title>Registration Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+ 
+
+  		<style type="text/css">
+  			#success_message{ display: none;}
+  		</style>
+
+</head>
+<body>
+
+    <div class="container">
+
+    <form class="well form-horizontal" action="registration.php" method="post"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h2><b>Registration Form</b></h2></center></legend><br>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">First Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="first_name" placeholder="First Name" class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="last_name" placeholder="Last Name" class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
+
+  <div class="form-group"> 
+  <label class="col-md-4 control-label">Department / Office</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select id="department"  name="department" class=" department form-control selectpicker" required>
+      <option value="">Select your Department/Office</option>
+      
+    </select>
+  </div>
+</div>
+</div>
+
+
+ <div class="form-group"> 
+  <label class="col-md-4 control-label">Country</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="country" id="country" class="form-control selectpicker" required>
+      <option selected>Select your Country</option>
+      
+    </select>
+  </div>
+</div>
+</div>
+
+
+ <div class="form-group"> 
+  <label class="col-md-4 control-label">State</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="state" id="state" class="form-control selectpicker" required>
+      <option value="">Select your State</option>
+      
+    </select>
+  </div>
+</div>
+</div>
+
+
+
+ <div class="form-group"> 
+  <label class="col-md-4 control-label">District</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="district" id="district" class="form-control selectpicker" required>
+      <option value="">Select your District</option>
+      
+    </select>
+  </div>
+</div>
+</div>
+  
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Username</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="user_name" id="user_name" placeholder="Username" class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="user_password" id="user_password" placeholder="Password" class="form-control"  type="password" required>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Confirm Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="confirm_password" id="confirm_password" placeholder="Confirm Password" class="form-control"  type="password" required>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" id="email" placeholder="E-Mail Address" class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+       
+<div class="form-group">
+  <label class="col-md-4 control-label">Contact No.</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="contact_no" id="contact_no" placeholder="(+91)" class="form-control" type="text" required>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="form-group">
+  <label class="col-md-4 control-label">Profile Image.</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+<span> <input type="file" name="my_image" id="my_image" required></span><span><input type="submit" name="submit_image" value="Upload"></span>
+
+    </div>
+  </div>
+</div> -->
+
+
+       
+
+<!-- Select Basic -->
+
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" Name="submit" id="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div><!-- /.container -->
+
+
+    <div id="fetchRegis" class="container"> 
+
+
+
+    </div>
+
+
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+
+   <script type="text/javascript">
+           var  valData;
+     $(document).ready(function(){
+
+            $.ajax({
+              url: "department.php",
+              success: function(data){
+               valData = JSON.parse(data);
+               var length = valData.fetchdata.length;
+                var htr ='';
+               for (var i = 0; i<length; i++) {
+htr+='<option value="'+valData.fetchdata[i].dept_name+'">'+valData.fetchdata[i].dept_name+'</option>';
+                };
+              $("#department").html(htr);
+    }});
+
+               $.ajax({
+                          url: "country.php",
+                          success: function(data){
+                           valData = JSON.parse(data);
+                          var length = valData.fetchdata.length;
+                          var country_name = '';
+                          for(var i = 0;i<length;i++)
+                          {
+                         country_name+='<option value="'+valData.fetchdata[i].count_id+'">'+valData.fetchdata[i].count_name+'</option>';
+                          }
+
+                          $("#country").html(country_name);
+
+                }});
+
+
+
+               $("#country").click(function()
+               {
+                  var c_id = $(this).val();
+                  
+                 $.ajax({
+                      type:"post",
+                      url:"state.php",
+                      data:{id:c_id},
+                      success:function(data)
+                      {
+                      var state_response = JSON.parse(data);
+                        var length = state_response.fetchdata.length;
+                        var state_append = '';
+                        for(var i = 0; i <length;i++)
+                        {
+
+                          state_append+= '<option value="'+state_response.fetchdata[i].state_id+'">'+state_response.fetchdata[i].state_name+'</option>'
+                        }
+                          $("#state").html(state_append);
+                       
+                      }
+
+                 });
+               });
+
+
+              $("#state").click(function()
+               {
+                  var s_id = $(this).val();
+                  
+                 $.ajax({
+                      type:"post",
+                      url:"district.php",
+                      data:{id:s_id},
+                      success:function(data)
+                      {
+                        
+                      var district_response = JSON.parse(data);
+                        var length = district_response.fetchdata.length;
+                        var state_append = '';
+                        for(var i = 0; i <length;i++)
+                        {
+
+                          state_append+= '<option value="'+district_response.fetchdata[i].district_name+'">'+district_response.fetchdata[i].district_name+'</option>'
+                        }
+                          $("#district").html(state_append);
+                       
+                      }
+
+                 });
+               });
+
+
+              $.ajax({
+                url:"fetchregistration.php",
+                type: "get",
+                dataType : "json",
+                contentType: "application/json; charset=utf-8",
+                success:function(data)
+                {
+                 // var fetchVal = JSON.parse(data);
+                  console.log(data);
+                }
+              });
+
+     });
+
+
+
+
+  </script>
+
+</body>
+</html>
